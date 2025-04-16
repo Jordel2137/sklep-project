@@ -1,0 +1,7 @@
+<div class="card p-3" style="width: 300px;">
+  <h5>Koszyk</h5>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let p of cartService.cart">{{ p.name }}</li>
+  </ul>
+  <button class="btn btn-success mt-3" (click)="buy()">Kup</button>
+</div>

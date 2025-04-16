@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="btn-group mb-3">
+    <button class="btn btn-secondary" *ngFor="let cat of categories" (click)="filter(cat)">
+      {{ cat }}
+    </button>
+    <button class="btn btn-secondary" (click)="showAll()">Wszystkie</button>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let p of filteredProducts">
+      <div class="card">
+        <img [src]="p.image" class="card-img-top" alt="{{ p.name }}">
+        <div class="card-body">
+          <h5>{{ p.name }}</h5>
+          <p>{{ p.desc }}</p>
+          <button class="btn btn-primary" (click)="addToCart(p)">Dodaj</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
