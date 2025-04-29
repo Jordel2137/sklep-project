@@ -1,0 +1,6 @@
+{
+  "products": [
+    { "id": 1, "name": "Produkt A", "desc": "Opis A", "category": "Kategoria 1", "image": "imagee.jpg" },
+    { "id": 2, "name": "Produkt B", "desc": "Opis B", "category": "Kategoria 2", "image": "imagee.jpg" }
+  ]
+}

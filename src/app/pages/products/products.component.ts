@@ -17,12 +17,15 @@ export class ProductsComponent {
     private productService: ProductService,
     private cartService: CartService
   ) {
-    this.filteredProducts = this.productService.getProducts();
+    this.productService.getProducts().subscribe(products => {
+      this.filteredProducts = products;
+    });
   }
 
   filter(category: string) {
-    this.filteredProducts = this.productService.getProducts()
-      .filter(p => p.category === category);
+    this.productService.getProducts().subscribe(products => {
+      this.filteredProducts = products.filter((p: Product) => p.category === category);
+    });
   }
 
   addToCart(product: Product) {
@@ -30,6 +33,8 @@ export class ProductsComponent {
   }
 
   showAll() {
-    this.filteredProducts = this.productService.getProducts();
+    this.productService.getProducts().subscribe(products => {
+      this.filteredProducts = products;
+    });
   }
 }
